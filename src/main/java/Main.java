@@ -16,9 +16,9 @@ public class Main {
 			//SEGUNDO EJERCICIO
 			String palabra = JOptionPane.showInputDialog("Introduce una palabra , para verificar si es un palindromo");
 			if(persona.verificarPalindromo(palabra)) {
-				System.out.println("La palabra: '" + palabra + "'" + " si es un palindromo");
+				JOptionPane.showInputDialog("La palabra: " + palabra + " SI es un palindromo");
 			} else {
-				System.out.println("La palabra: '" + palabra + "'" + " no es un palindromo");
+				JOptionPane.showInputDialog("La palabra: " + palabra + " NO es un palindromo");
 			}
 			
 			//TERCER EJERCICIO

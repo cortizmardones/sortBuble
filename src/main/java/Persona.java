@@ -29,7 +29,7 @@ public class Persona {
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-	
+
 	@Override
 	public String toString() {
 		return "Persona [edad=" + edad + ", nombre=" + nombre + "]";
@@ -46,7 +46,7 @@ public class Persona {
 		// CREO UN NUEVO ARRAY PARA GUARDAR LA PALABRA INGRESADA AL REVES
 		String[] palabraArrayAlReves = new String[palabra.length()];
 
-		//RECORRO EL ARRAY AL REVES
+		// RECORRO EL ARRAY AL REVES
 		for (int i = 0; i < palabraArray.length; i++) {
 			palabraArrayAlReves[i] = palabraArray[palabraArray.length - 1 - i];
 		}
@@ -58,37 +58,29 @@ public class Persona {
 		}
 
 	}
-
+	
+	// BUBBLE SORT EXAMPLE
 	public int[] retornarArrayOrdenado(int[] array) {
 
-		// ESTE ES ORDENAMIENTO BURBUJA , SOLO QUE INTERNET EN VEZ DE WHILE OCUPAN OTRO
-		// FOR - SOLO PARA ASEGURARSE DE QUE SE ITERE VARIAS VECES YA QUE CON UN SOLO
-		// RECORRIDO NO SE ORDENA UN ARRAY MUY GRANDE
-		int j = 0;
-		while (j < array.length) {
+		// HAY QUE UTILIZAR 2 FOR ANIDADOS PARA ASEGURARSE DE APLICAR LA MISMA LOGICA VARIAS VECES
+		for(int i = 0 ; i < array.length -1; i++) {
 			
-			// RECORRO EL ARRAY /EL MENOS 1 ES PARA EVITAR UN DESBORDAMIENTO YA QUE ABAJO PREGUNTO POR LA POSICION i+1 
-			for (int i = 0; i < array.length - 1; i++) {
+			// RECORRO EL ARRAY /EL MENOS 1 ES PARA EVITAR UN DESBORDAMIENTO YA QUE ABAJO PREGUNTO POR LA POSICION i+1
+			for (int j = 0; j < array.length - 1; j++) {
 
-				// VALIDACION PARA NO ESCAPARME DEL ARREGLO
-				// if (i != array.length - 1) {
-
-				// CONDICIONAL PARA VALIDAR LA PRIMERA POSICION CON LA SEGUNDA Y ASI
-				// SUCESIVAMENTE
-				if (array[i] > array[i + 1]) {
+				// CONDICIONAL PARA VALIDAR LA PRIMERA POSICION CON LA SEGUNDA Y ASI SUCESIVAMENTE
+				if (array[j] > array[j + 1]) {
 
 					// GUARDO LA PRIMERA POSICION EN UNA VARIABLE AUXILIAR
-					int auxiliar = array[i];
+					int auxiliar = array[j];
 
 					// GUARDO EN LA PRIMERA POSICION EL NUMERO MAS PEQUEÑO
-					array[i] = array[i + 1];
+					array[j] = array[j + 1];
 
 					// GUARDO EN LA SEGUNDA POSICION EL NUMERO MAS GRANDE
-					array[i + 1] = auxiliar;
+					array[j + 1] = auxiliar;
 				}
-				// }
 			}
-			j++;
 		}
 
 		return array;
